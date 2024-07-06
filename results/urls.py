@@ -1,8 +1,12 @@
 from django.urls import path
-from results import views as views_results
+# Importando as views do app 'results' e renomeando para 'views_results'
+from results import views as views_results 
 
 urlpatterns = [
-    path('', views_results.home_results),
-    path('clientes_ativos/', views_results.clientes_ativos),
-    path('clientes_desativados/', views_results.clientes_desativados),
+    # Rota para a página inicial dos resultados
+    path('', views_results.home),      
+    # Rota para a página de clientes ativos
+    path('clientes_ativos/', views_results.clientes_ativos),      
+    # Rota para a página de clientes desativados
+    path('clientes_desativados/', views_results.clientes_desativados),  
 ]

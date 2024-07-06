@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 # Create your views here.
-def home_results(request):
+def home(request):
     return HttpResponse('estamos na View "RESULTS_HOME" do app Results')
 
 def clientes_ativos(request):

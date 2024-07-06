@@ -18,9 +18,10 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('', include('home.urls')),
-    path('home_results/', include('results.urls')),
-    path('clientes_ativos/', include('results.urls')),
-    path('clientes_desativados/', include('results.urls')),
+    # Inclui as URLs do app 'home' na raiz do site
+    path('', include('home.urls')),      
+    # Inclui as URLs do app 'results' para a rota 'results_home'
+    path('results_home/', include('results.urls')),      
+    # Rota para a administração do site
     path('admin/', admin.site.urls),
 ]
