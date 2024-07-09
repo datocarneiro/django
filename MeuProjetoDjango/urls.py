@@ -21,7 +21,7 @@ urlpatterns = [
     # Inclui as URLs do app 'home' na raiz do site
     path('', include('home.urls')),      
     # Inclui as URLs do app 'results' para a rota 'results_home'
-    path('results_home/', include('results.urls')),      
+    path('results/', include('results.urls')),      
     # Rota para a administração do site
     path('admin/', admin.site.urls),
 ]

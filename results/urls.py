@@ -6,7 +6,7 @@ urlpatterns = [
     # Rota para a página inicial dos resultados
     path('', views_results.home),      
     # Rota para a página de clientes ativos
-    path('clientes_ativos/', views_results.clientes_ativos),      
+    path('clientesAtivos/', views_results.clientes_ativos),      
     # Rota para a página de clientes desativados
-    path('clientes_desativados/', views_results.clientes_desativados),  
+    path('clientesDesativados/', views_results.clientes_desativados),  
 ]
