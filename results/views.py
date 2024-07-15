@@ -2,7 +2,9 @@ from django.shortcuts import render
 
 # Create your views here.
 def home(request):
-    return render(request, 'results/index.html')
+
+    context= {'title': 'Pagina de RESULTADOS'}
+    return render(request, 'results/index.html', context)
 
 def clientes_ativos(request):
     return render(request, 'results/clientesAtivos.html')
