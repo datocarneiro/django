@@ -4,9 +4,9 @@ from results import views as views_results
 
 urlpatterns = [
     # Rota para a página inicial dos resultados
-    path('', views_results.home),      
+    path('', views_results.home, name='results/home'),      
     # Rota para a página de clientes ativos
-    path('clientesAtivos/', views_results.clientes_ativos),      
+    path('clientesAtivos/', views_results.clientes_ativos, name='clientesAtivos'),      
     # Rota para a página de clientes desativados
-    path('clientesDesativados/', views_results.clientes_desativados),  
+    path('clientesDesativados/', views_results.clientes_desativados, name='clientesDesativados'),  
 ]

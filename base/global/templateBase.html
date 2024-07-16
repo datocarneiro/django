@@ -1,10 +1,32 @@
 {% load static %}<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }} - Dato</title>
-    <link rel="stylesheet" href="{% static "results/css/style.css" %}">
+    <!-- <link rel="stylesheet" href="{% static "results/css/style.css" %}"> -->
     <link rel="stylesheet" href="{% static "global/css/style.css" %}">
+    <h1>
+        {% block texto_principal %}
+            texto_principal em Template BASE
+        {% endblock texto_principal %}
+    </h1>
 </head>
-{% comment %}  {% endcomment %}
+<body>
+    <!-- incluindo Menu.html -->
+    {% include "global/partials/menu.html" %}
+    
+        <p> Aqui seria o corpo da pagina 
+        <p> Aqui seria o corpo da pagina 
+        <p> Aqui seria o corpo da pagina 
+        <p> Aqui seria o corpo da pagina 
+        <p> Aqui seria o corpo da pagina 
+        <p> Aqui seria o corpo da pagina 
+        <p> Aqui seria o corpo da pagina 
+</Body>
+</html>
+
+
+
+
