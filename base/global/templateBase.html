@@ -1,5 +1,4 @@
 {% load static %}<!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,14 +15,12 @@
 <body>
     <!-- incluindo Menu.html -->
     {% include "global/partials/menu.html" %}
-    
-        <p> Aqui seria o corpo da pagina 
-        <p> Aqui seria o corpo da pagina 
-        <p> Aqui seria o corpo da pagina 
-        <p> Aqui seria o corpo da pagina 
-        <p> Aqui seria o corpo da pagina 
-        <p> Aqui seria o corpo da pagina 
-        <p> Aqui seria o corpo da pagina 
+
+    <main class="content">
+        {% block posts %} {% endblock posts %}
+    </main>
+
+
 </Body>
 </html>
 

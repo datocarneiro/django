@@ -1,4 +1,5 @@
 from django.urls import path
+
 # Importando as views do app 'results' e renomeando para 'views_results'
 from results import views as views_results 
 
