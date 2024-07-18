@@ -1,14 +1,14 @@
 from django.shortcuts import render
 from results.post import posts
+
+
 # Create your views here.
 def home(request):
-
+    data = posts()
     context= {
         'title': 'Pagina de RESULTADOS',
-        'posts': posts()
+        'posts': data
         }
-    for post in context['posts']:
-        print(post['id'])
     return render(request, 'results/index.html', context)
 
 def clientes_ativos(request):

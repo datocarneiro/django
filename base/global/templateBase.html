@@ -6,15 +6,16 @@
     <title>{{ title }} - Dato</title>
     <!-- <link rel="stylesheet" href="{% static "results/css/style.css" %}"> -->
     <link rel="stylesheet" href="{% static "global/css/style.css" %}">
-    <h1>
-        {% block texto_principal %}
-            texto_principal em Template BASE
-        {% endblock texto_principal %}
-    </h1>
 </head>
+<h1>
+    {% block texto_principal %}
+        texto_principal em Template BASE
+    {% endblock texto_principal %}
+</h1>
 <body>
     <!-- incluindo Menu.html -->
     {% include "global/partials/menu.html" %}
+
 
     <main class="content">
         {% block posts %} {% endblock posts %}
