@@ -6,12 +6,14 @@
     <title>{{ title }} - Dato</title>
     <!-- <link rel="stylesheet" href="{% static "results/css/style.css" %}"> -->
     <link rel="stylesheet" href="{% static "global/css/style.css" %}">
-</head>
-<h1>
-    {% block texto_principal %}
-        texto_principal em Template BASE
-    {% endblock texto_principal %}
-</h1>
+</head> 
+{% if texto_principal %}
+    <h1 class="texto_principal">
+        {% block texto_principal %}
+            *** Revisar Bloco texto_principal ***
+        {% endblock texto_principal %}
+    </h1>
+{% endif %}
 <body>
     <!-- incluindo Menu.html -->
     {% include "global/partials/menu.html" %}

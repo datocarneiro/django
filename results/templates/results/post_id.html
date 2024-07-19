@@ -2,21 +2,14 @@
 
 {% comment %} H1 ESTA AQUI  {% endcomment %}
 {% block texto_principal%}
-    Texto Principal no RESULTS/Home
+    {{texto_principal}}{{post_id}}
 {% endblock texto_principal %} 
 
 {% comment %} MENU VEIO AQUI  {% endcomment %}
 
 {% comment %} POST SÃO AQUI  {% endcomment %}
-
-<!          *** COMENTÀRIO ***
-- Aqui a variavel vindo da View é 'POSTS'
-- E ai fazemos um FOR usando a variavel como 'POST'
-- então o que é renderizado no template 'POST.HTML' é os dados em 'POST'>
-{% block posts %}           
-    {% for post in posts %}
+{% block posts %}
         {% include "global/partials/post.html" %}
-    {% endfor %}
 {% endblock posts %} 
 
 

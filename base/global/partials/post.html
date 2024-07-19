@@ -2,7 +2,7 @@
 <article class="post">
     <header>
         <h2 class="post__title">
-            {{post.title}}
+            <a class="post_title" href="{% url 'results:post_id' post.id %}">{{post.title}}</a>
         </h2>
     </header>
     <div class="post__body">

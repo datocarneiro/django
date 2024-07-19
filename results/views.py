@@ -11,6 +11,23 @@ def home(request):
         }
     return render(request, 'results/index.html', context)
 
+def post(request, post_id):
+    data = posts()
+    _id = int(post_id)
+    print('PostID:',post_id)
+    for i in data:
+        if i['id'] == _id:
+            break
+    print('*********************************************')
+    print('print iiiiiiii:', _id, i['id'], i['title'])
+    context= {
+        'texto_principal': 'Post ID: ',
+        'post_id': _id,
+        'post': i
+        }
+        
+    return render(request, 'results/post_id.html', context)
+
 def clientes_ativos(request):
     return render(request, 'results/clientesAtivos.html')
 

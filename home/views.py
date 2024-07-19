@@ -4,8 +4,7 @@ from django.shortcuts import render
 def home(request):
 
     context = {
-        'mensagem1': 'MSG - 001',
-        'mensagem2': 'AQUI OUTRA MENSAGEM - 002',
+        'texto_principal': 'block texto_principal',
         'title': 'Pagina Home'
     }
 
