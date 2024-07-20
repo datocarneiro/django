@@ -14,10 +14,12 @@ html {
     animation: alternate;
     background-color: #415c7c;
     padding: 1.5rem;
+
     
 }
-.links{
+.menu_links{
     display: flex;
+    list-style: none;
 }
 
 .texto_principal{
@@ -55,7 +57,7 @@ body {
 }
 
 @media (min-width: 600px) {
-    .content{
+    .content:not(:has(.single-post)){
         grid-template-columns: repeat(auto-fill, minmax(35rem, 1fr));
     }
 }

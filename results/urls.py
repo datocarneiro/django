@@ -11,7 +11,7 @@ urlpatterns = [
     # Rota para a página de clientes ativos
     path('clientesAtivos/', views_results.clientes_ativos, name='clientesAtivos'),      
     # Rota para a página com post especifico com o ID
-    path('post/<post_id>/', views_results.post, name='post_id'),      
+    path('post/<int:post_id>/', views_results.post, name='post_id'),      
     # Rota para a página com todos os posts
     path('', views_results.home, name='results/home'),      
 ]

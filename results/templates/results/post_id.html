@@ -1,15 +1,38 @@
-{% extends "global/templateBase.html" %}
+{% load static %}<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{  post.title }} - Dato</title>
+    <!-- <link rel="stylesheet" href="{% static "results/css/style.css" %}"> -->
+    <link rel="stylesheet" href="{% static "global/css/style.css" %}">
+</head> 
+{% if texto_principal %}
+    <h1 class="texto_principal">
+        {% block texto_principal %}
+            {{texto_principal}}{{post_id}} | Titulo: {{ post.title}}
+        {% endblock texto_principal %}
+    </h1>
+{% endif %}
+<body>
+    <!-- incluindo Menu.html -->
+    {% include "global/partials/menu.html" %}
 
-{% comment %} H1 ESTA AQUI  {% endcomment %}
-{% block texto_principal%}
-    {{texto_principal}}{{post_id}}
-{% endblock texto_principal %} 
 
-{% comment %} MENU VEIO AQUI  {% endcomment %}
+    <main class="content">
+        <article class="post single-post">
+            <header>
+                <h1 class="post__title">
+                    <a class="post_title" href="{% url 'results:post_id' post.id %}">{{post.title}}</a>
+                </h1>
+            </header>
+            <div class="post__body">
+                {{post.body}}      
+            </div>
+        </article>
+        
+    </main>
 
-{% comment %} POST SÃO AQUI  {% endcomment %}
-{% block posts %}
-        {% include "global/partials/post.html" %}
-{% endblock posts %} 
 
-
+</Body>
+</html>

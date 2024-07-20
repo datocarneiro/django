@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from results.post import posts
-
+from typing import Any
+from django.http import HttpRequest
+from django.http import HttpResponse
 
 # Create your views here.
 def home(request):
@@ -11,19 +13,27 @@ def home(request):
         }
     return render(request, 'results/index.html', context)
 
-def post(request, post_id):
+def post(request: HttpRequest, post_id:int):
+    post_encontrado: dict[str, Any] | None = None
+    print(type(post_id))
+
+
     data = posts()
-    _id = int(post_id)
     print('PostID:',post_id)
+
     for i in data:
-        if i['id'] == _id:
-            break
-    print('*********************************************')
-    print('print iiiiiiii:', _id, i['id'], i['title'])
+        if i['id'] == int(post_id):
+            post_encontrado = i
+            break 
+
+    if post_encontrado is None:
+    
+        raise HttpResponse ('Post {post_id}, não existe')
+    
     context= {
         'texto_principal': 'Post ID: ',
-        'post_id': _id,
-        'post': i
+        'post_id': post_id,
+        'post': post_encontrado
         }
         
     return render(request, 'results/post_id.html', context)
@@ -33,4 +43,3 @@ def clientes_ativos(request):
 
 def clientes_desativados(request):
     return render(request, 'results/clientesDesativados.html')
-
