@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from results.post import posts
 from typing import Any
-from django.http import HttpRequest
-from django.http import HttpResponse
+from django.http import HttpRequest, HttpResponse, Http404
+
 
 # Create your views here.
 def home(request):
@@ -28,7 +28,7 @@ def post(request: HttpRequest, post_id:int):
 
     if post_encontrado is None:
     
-        raise HttpResponse ('Post {post_id}, não existe')
+        raise Http404 ('Post, não existe')
     
     context= {
         'texto_principal': 'Post ID: ',
